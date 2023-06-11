@@ -8,32 +8,37 @@ A= [ 1, 22, -200, 105, 99, 6, 80, -5, 11, 45 ]. Considere el uso de una variable
 #include <unistd.h>
 
 #define N 10
+
 int main()
 {
-    int Array[N];
-    int i, pivot;
+    int A[N];
+    int pivot = 0;
+    int i,j;
+
     srand(getpid());
 
-    printf("Array original:\n\n");
-
-    for( i = 0; i < N; i++)
+    printf("{ ");
+    for ( i = 0; i < N; i++)
     {
-        Array[i] = 1 + rand() %100;
-        printf("%d ", Array[i]);
-    }
+        A[i] = 1 + rand() %500;
 
-    for( i = 0; i < N / 2;i++)
-    {
-        pivot = Array[i];
-        Array[i] = Array[N - 1 - i];
-        Array[N - 1 - i] = pivot;
+        printf("%d ",A[i]);
     }
-    printf("\n\nArray Invertido:\n\n");
-
-    for( i = 0; i < N; i++)
+    printf("} \n");
+    
+    for (i = 0, j = N-1; i < N/2 && j > 0; i++,j--)
     {
-        printf("%d ", Array[i]);
+        pivot = A[i];
+        A[i] = A[j];
+        A[j] = pivot; 
     }
+    
+    printf("Array invertido:\n");
+    for ( i = 0; i < N; i++)
+    {
+        printf("%d ",A[i]);
+    }
+    
 
     return 0;
 }

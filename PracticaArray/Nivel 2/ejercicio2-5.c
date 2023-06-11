@@ -8,7 +8,8 @@ Ejemplo, un array A con N valiendo 10, r estará comprendido en [-9, 9].
 Es decir, dado el array
 A= [ 45, 11, -5, 80, 6, 99, 105, -200, 22, 1],
 Si r= 1 ⇒ A= [ 1, 45, 11, -5, 80, 6, 99, 105, -200, 22 ] Todos los elementos rotaron 1 posición a la derecha
-Si r=-3 ⇒ A= [ -5, 80, 6, 99, 105, -200, 22, 1, 45, 11 ] Todos los elementos rotaron 3 posiciones a la izquierda*/
+Si r=-3 ⇒ A= [ -5, 80, 6, 99, 105, -200, 22, 1, 45, 11 ] Todos los elementos rotaron 3 posiciones a la izquierda
+*/
 
 #include <stdio.h>
 #define N 10
@@ -49,13 +50,14 @@ int main()
     }
     while (r > 0)
     {
+        //pivote = valor en la pos 9
         pivote = A[N - 1];
-        for (j = N - 2; j >= 0; j--)
+        for (j = N - 2; j >= 0; j--)    
         {
             A[j + 1] = A[j];
         }
-        A[0] = pivote;
-        r--;
+        A[0] = pivote; //en la posicion 0 siempre vale el valor de la pos 9(la ultima)
+        r--;    // el for lo haces r veces
     }
     // impresion de su rotacion
     if (copia_r !=0)
