@@ -59,6 +59,7 @@ int main()
         A[0] = pivote; //en la posicion 0 siempre vale el valor de la pos 9(la ultima)
         r--;    // el for lo haces r veces
     }
+    
     // impresion de su rotacion
     if (copia_r !=0)
     {

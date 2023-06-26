@@ -27,7 +27,7 @@ int main()
         printf("Ingrese un float ente 0 y 100: \n");
         printf("> ");
         scanf("%f", &f);
-    }while( f < 0 || f > 100);
+    }while( f <= 0 || f > 100);
 
     printf("El array P es: \n");
 
